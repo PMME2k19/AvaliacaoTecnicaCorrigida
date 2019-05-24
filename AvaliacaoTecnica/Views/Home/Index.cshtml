@@ -1,0 +1,9 @@
+﻿@model AvaliacaoTecninca.ViewModel.HomeViewModel
+@{
+    ViewBag.Title = "Página Principal";
+
+    if (Session["username"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}

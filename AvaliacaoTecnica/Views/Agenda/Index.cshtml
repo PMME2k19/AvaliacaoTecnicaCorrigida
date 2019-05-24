@@ -1,0 +1,45 @@
+﻿@model IEnumerable<AvaliacaoTecninca.Models.Agenda>
+
+<p>
+    @Html.ActionLink("Criar Nova Agenda", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.dataAgenda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Servico)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.dataAgenda)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.estado)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Descricao)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Servico.Nome)
+    </td>
+    <td>
+        @Html.ActionLink("Reagendar", "Edit", new {/* id = item.Id*/ }) |
+        @Html.ActionLink("Visualizar", "Details", new {/* id = item.Id*/ }) |
+        @Html.ActionLink("Cancelar", "Delete", new { /* id = item.Id*/  })
+    </td>
+</tr>
+}
+
+</table>
